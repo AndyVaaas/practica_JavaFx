@@ -18,7 +18,12 @@ public class Main extends Application {
 
         // Configuramos la acción del botón
         boton.setOnAction(e -> {
-            label.setText(campo.getText());
+            try {
+        Producto p = new Producto(campo.getText());
+        label.setText(p.getNombre());
+        } catch (Exception ex) {
+        label.setText(ex.getMessage());
+}
         });
 
         // Creamos el diseño y metemos los componentes
